@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function HomePage() {
   return (
     <main className="max-w-6xl mx-auto px-4 py-16">
@@ -9,12 +11,36 @@ export default function HomePage() {
           <p className="mt-4 text-slate-600 text-lg">
             Atendimento online e presencial. Foco em bem-estar emocional, ansiedade e relacionamentos.
           </p>
+
           <div className="mt-6 flex gap-3">
-            <a href="/contato" className="rounded-2xl px-5 py-3 font-medium bg-slate-900 text-white">Marcar conversa</a>
-            <a href="/sobre" className="rounded-2xl px-5 py-3 font-medium border border-slate-300">Conheça meu trabalho</a>
+            <a
+              href="/contato"
+              className="rounded-2xl px-5 py-3 font-medium bg-slate-900 text-white"
+            >
+              Marcar conversa
+            </a>
+
+            <a
+              href="/sobre"
+              className="rounded-2xl px-5 py-3 font-medium border border-slate-300"
+            >
+              Conheça meu trabalho
+            </a>
           </div>
         </div>
-        <div className="aspect-[4/3] md:aspect-square rounded-3xl bg-slate-200 shadow-inner" aria-label="Foto/ilustração profissional" />
+
+        <div className="w-full">
+          <div className="relative aspect-[4/3] md:aspect-square rounded-3xl overflow-hidden shadow-inner ring-1 ring-slate-200">
+            <Image
+              src="/images/yara-psi-lendo1.jpg"
+              alt="Retrato profissional de Yara Rodrigues, Psicóloga"
+              fill
+              sizes="(min-width: 768px) 50vw, 100vw"
+              className="object-cover"
+              priority
+            />
+          </div>
+        </div>
       </section>
     </main>
   );
